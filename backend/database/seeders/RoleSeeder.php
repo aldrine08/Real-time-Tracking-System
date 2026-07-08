@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use App\Enums\RoleType;
 
 class RoleSeeder extends Seeder
 {
@@ -13,32 +14,32 @@ class RoleSeeder extends Seeder
         $roles = [
 
             [
-                'name' => 'Super Admin',
+                'name' => RoleType::SUPER_ADMIN->value,
                 'description' => 'Platform administrator'
             ],
 
             [
-                'name' => 'Merchant Admin',
+                'name' => RoleType::MERCHANT_ADMIN->value,
                 'description' => 'Company administrator'
             ],
 
             [
-                'name' => 'Dispatcher',
+                'name' => RoleType::DISPATCHER->value,
                 'description' => 'Assigns riders and manages deliveries'
             ],
 
             [
-                'name' => 'Rider',
+                'name' => RoleType::RIDER->value,
                 'description' => 'Performs deliveries'
             ],
 
             [
-                'name' => 'Warehouse Staff',
+                'name' => RoleType::WAREHOUSE_STAFF->value,
                 'description' => 'Manages warehouse operations'
             ],
 
             [
-                'name' => 'Customer Support',
+                'name' => RoleType::CUSTOMER_SUPPORT->value,
                 'description' => 'Supports customers'
             ],
 
