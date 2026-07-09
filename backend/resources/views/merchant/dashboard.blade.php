@@ -41,26 +41,26 @@
             />
 
             <x-cards.stat-card
-    title="Total Vehicles"
-    :value="$totalVehicles"
-    icon="truck"
-/>
+                title="Assigned Vehicles"
+                :value="$assignedVehicles"
+                icon="🚚 🏍️"
+            />
 
-<x-cards.stat-card
-    title="Available Vehicles"
-    :value="$availableVehicles"
-    icon="check-circle"
-/>
-
-<x-cards.stat-card
-    title="Assigned Vehicles"
-    :value="$assignedVehicles"
-    icon="users"
-/>
-
-
+            <x-cards.stat-card
+                title="Available Vehicles"
+                :value="$availableVehicles"
+                icon="🚚 🏍️"
+            />
 
             
+
+            <x-cards.stat-card
+                title="Total Vehicles"
+                :value="$totalVehicles"
+                icon="🚚 🏍️"
+            />
+
+            </div>
 
         
 
