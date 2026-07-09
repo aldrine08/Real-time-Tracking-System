@@ -9,4 +9,14 @@ class Rider extends Model
 {
     /** @use HasFactory<\Database\Factories\RiderFactory> */
     use HasFactory;
+
+    public function currentLocation()
+{
+    return $this->hasOne(GPSLocation::class);
+}
+
+public function locationHistory()
+{
+    return $this->hasMany(GPSLocationHistory::class);
+}
 }

@@ -73,6 +73,16 @@ class Vehicle extends Model
         });
     }
 
+    public function gpsLocations()
+{
+    return $this->hasMany(GPSLocation::class);
+}
+
+public function gpsHistory()
+{
+    return $this->hasMany(GPSLocationHistory::class);
+}
+
     /*
     |--------------------------------------------------------------------------
     | Relationships
