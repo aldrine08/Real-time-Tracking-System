@@ -7,6 +7,8 @@ use App\Http\Controllers\Merchant\DashboardController;
 
 use App\Http\Controllers\DashboardRedirectController;
 
+use App\Http\Controllers\Merchant\FleetDashboardController;
+
 
 
 Route::get('/', function () {
@@ -15,9 +17,21 @@ Route::get('/', function () {
 
 
 
-Route::get('/dashboard', DashboardRedirectController::class)
-    ->middleware(['auth'])
-    ->name('dashboard');
+// Route::get('/dashboard', DashboardRedirectController::class)
+//     ->middleware(['auth'])
+//     ->name('dashboard');
+
+    Route::middleware(['auth'])
+    ->prefix('merchant')
+    ->name('merchant.')
+    ->group(function () {
+
+        Route::get(
+            '/dashboard',
+            [FleetDashboardController::class, 'index']
+        )->name('dashboard');
+
+    });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,24 +42,9 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/merchant/dashboard', [DashboardController::class, 'index'])
-        ->name('merchant.dashboard');
+    
 
-        Route::view('/super-admin/dashboard', 'dashboard')
-    ->name('super-admin.dashboard');
-
-Route::view('/dispatcher/dashboard', 'dashboard')
-    ->name('dispatcher.dashboard');
-
-Route::view('/rider/dashboard', 'dashboard')
-    ->name('rider.dashboard');
-
-Route::view('/warehouse/dashboard', 'dashboard')
-    ->name('warehouse.dashboard');
-
-Route::view('/support/dashboard', 'dashboard')
-    ->name('support.dashboard');
-
+        
 });
 
 require __DIR__.'/auth.php';

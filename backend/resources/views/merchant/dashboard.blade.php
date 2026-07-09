@@ -40,7 +40,29 @@
                 change="Today"
             />
 
-        </div>
+            <x-cards.stat-card
+    title="Total Vehicles"
+    :value="$totalVehicles"
+    icon="truck"
+/>
+
+<x-cards.stat-card
+    title="Available Vehicles"
+    :value="$availableVehicles"
+    icon="check-circle"
+/>
+
+<x-cards.stat-card
+    title="Assigned Vehicles"
+    :value="$assignedVehicles"
+    icon="users"
+/>
+
+
+
+            
+
+        
 
         <!-- Quick Actions -->
         <x-dashboard.quick-actions />
@@ -64,3 +86,5 @@
     </div>
 
 </x-layout.merchant>
+
+
