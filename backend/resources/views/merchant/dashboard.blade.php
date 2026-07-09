@@ -1,4 +1,4 @@
-<x-layouts.merchant title="Dashboard">
+<x-layout.merchant title="Dashboard">
 
     <div class="space-y-8">
 
@@ -63,4 +63,4 @@
 
     </div>
 
-</x-layouts.merchant>
+</x-layout.merchant>

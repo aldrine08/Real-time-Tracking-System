@@ -33,7 +33,7 @@ return new class extends Migration
 
         $table->string('profile_photo')->nullable();
 
-        $table->boolean('status')->default(true);
+        $table->string('status')->default('Active');
 
         $table->timestamp('last_login_at')->nullable();
     });

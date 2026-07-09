@@ -25,6 +25,9 @@ class UserFactory extends Factory
      */
     public function definition(): array
 {
+    $firstName = fake()->firstName();
+    $lastName  = fake()->lastName();
+
     return [
 
         'uuid' => Str::uuid(),
@@ -33,9 +36,11 @@ class UserFactory extends Factory
 
         'role_id' => null,
 
-        'first_name' => fake()->firstName(),
+        'name' => "{$firstName} {$lastName}",
 
-        'last_name' => fake()->lastName(),
+        'first_name' => $firstName,
+
+        'last_name' => $lastName,
 
         'email' => fake()->unique()->safeEmail(),
 
@@ -55,7 +60,6 @@ class UserFactory extends Factory
 
     ];
 }
-
 
 public function inactive(): static
 {
