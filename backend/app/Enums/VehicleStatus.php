@@ -6,9 +6,11 @@ enum VehicleStatus: string
 {
     case AVAILABLE = 'Available';
 
-    case IN_USE = 'In Use';
+    case ASSIGNED = 'Assigned';
+
+    case IN_TRANSIT = 'In Transit';
 
     case MAINTENANCE = 'Maintenance';
 
-    case OUT_OF_SERVICE = 'Out of Service';
+    case RETIRED = 'Retired';
 }

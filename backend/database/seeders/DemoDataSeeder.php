@@ -22,17 +22,9 @@ class DemoDataSeeder extends Seeder
 
             MerchantAdminSeeder::class,
 
-            RideSeeder::class,
-
-            ShipmentSeeder::class,
-
-            TrackingSeeder::class,
+            SubscriptionPlanSeeder::class,
 
             VehicleSeeder::class,
-
-            WarehouseSeeder::class,
-
-            SubscriptionPlanSeeder::class,
 
 
 
