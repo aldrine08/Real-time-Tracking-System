@@ -18,6 +18,8 @@
         "vite": "^8.0.0"
     },
     "dependencies": {
-        "@fontsource/inter": "^5.2.8"
+        "@fontsource/inter": "^5.2.8",
+        "laravel-echo": "^2.3.7",
+        "pusher-js": "^8.5.0"
     }
 }
