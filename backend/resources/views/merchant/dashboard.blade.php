@@ -1,19 +1,65 @@
 <x-layouts.merchant title="Dashboard">
 
-    <div class="space-y-6">
+    <div class="space-y-8">
 
-        <h1 class="text-3xl font-bold">
+        <!-- Welcome Header -->
+        <x-dashboard.welcome-header />
 
-            Welcome back,
-            {{ auth()->user()->first_name }}
+        <!-- KPI Cards -->
+        <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
 
-        </h1>
+            <x-cards.stat-card
+                title="Total Shipments"
+                value="1,248"
+                icon="📦"
+                color="blue"
+                change="+12% this week"
+            />
 
-        <p class="text-gray-600">
+            <x-cards.stat-card
+                title="Active Riders"
+                value="48"
+                icon="🏍️"
+                color="green"
+                change="+4 online"
+            />
 
-            Your logistics operations overview will appear here.
+            <x-cards.stat-card
+                title="Fleet Vehicles"
+                value="32"
+                icon="🚚"
+                color="yellow"
+                change="28 Available"
+            />
 
-        </p>
+            <x-cards.stat-card
+                title="Completed Deliveries"
+                value="986"
+                icon="✅"
+                color="purple"
+                change="Today"
+            />
+
+        </div>
+
+        <!-- Quick Actions -->
+        <x-dashboard.quick-actions />
+
+        <!-- Map + Activity -->
+        <div class="grid gap-8 xl:grid-cols-3">
+
+            <div class="xl:col-span-2">
+                <x-maps.live-map />
+            </div>
+
+            <div>
+                <x-dashboard.activity-timeline />
+            </div>
+
+        </div>
+
+        <!-- Recent Shipments -->
+        <x-tables.recent-shipments />
 
     </div>
 
